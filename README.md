@@ -54,7 +54,7 @@ is yet to be decided. To ensure scalability and flexibility of the solution, a m
 additional project source data into the dataset in the future will also be implemented.
 
 
-PREDICTUVE MODEL: 
+PREDICTIVE MODEL: 
 
 DCE also needs a highly accurate, scalable, and easy-to-use machine
 learning model that can predict the unconfined compressive strength of wet concrete samples. The
@@ -74,5 +74,38 @@ recording the break history during hot and cold climates. This information will 
 the quality of the concrete mixes and ensure that the structures are safe and of good quality. It is
 also important to note that for a given structure member, the predicted load that the concrete can
 withstand before failure should be almost equal to its expected strength value.
+
+# SOLUTIONS IMPLEMENTED
+
+The unconfined concrete strength test results are currently stored in PDF files, making it
+challenging to extract, analyze, and use the data effectively. The proposed solution is to develop
+a comprehensive data management system that involves the following steps:
+
+1. Text Scraping: The first step would be to extract the concrete strength
+test results from the PDF files using text scraping techniques. The data will be extracted from multiple PDF files using Python libraries such as PyPDFium2, pdfplumber-py, Camelot, and Tabula-py.
+PyPDFium2 and pdfplumber-py are used to convert PDF files to text format, while Camelot and Tabula-
+py are used to convert PDF file data into data frames. Diffreent libraries are used to extract data from different sections of the pdf file.
+
+2. Data Transformation: The extracted data would be transformed into a structured
+format, such as a tabular form, ready to be ingested in any Relational Database,
+for further processing.
+
+3. Data Analysis: The extracted data, which will then be analyzed to reveal
+meaningful insights and patterns. The analysis process will include data cleaning,
+preprocessing, and transformation to prepare the data for modeling.
+
+4. Machine Learning Model: The Supervised machine learning model will be used to predict the unconfined concrete
+strength for 7, 14, 28, and 56 days and identify the key influencing factors affecting the concrete
+strength under real-world conditions such as variations in local temperature. Supervised Learning
+is a method that trains the model on known input and output data so that it can predict the future
+output. The problem at hand involves predicting the value of a numerical variable, namely the
+concrete strength, based on several input variables including molded time. Due to the nature of
+this task, which requires the prediction of a quantitative value, it is classified as a regression
+problem. A neural network approach is chosen to address the
+complex relationships observed in the data between various variables such as Required Strength
+and Age-days, and their impact on the unconfined compressive strength (UCS). Neural networks are models inspired by the biological structure of the human brain,
+composed of processing units known as neurons. The strength of neural networks lies in their
+numerous interconnections and their ability to learn from data, which makes them powerful tools
+for prediction and classification.
 
 
