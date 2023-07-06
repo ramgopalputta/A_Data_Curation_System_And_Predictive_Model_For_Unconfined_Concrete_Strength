@@ -104,14 +104,17 @@ them. This ensures that the data is stored in a structured and organized format 
 tables, making it easier for DCE engineers and analysts to extract valuable insights and draw 
 conclusions from the data. The data curation system exports data into three clean data files:
 
-### a. Project Information: This file is created by DCE analysts and contains information related 
+### a. Project Information: 
+This file is created by DCE analysts and contains information related 
 to a project, such as the project name, building type, number of levels, height, address, site 
 latitude and longitude etc.
-### b. Specimen Field Report: This file includes field or site data, such as the site weather, 
+### b. Specimen Field Report: 
+This file includes field or site data, such as the site weather, 
 concrete mix ID, concrete supplier, time of specimen molding, specimen temperature, 
 specimen density, air content, required compression strength of the specimen, and other 
 related data points.
-### c. Specimen Compression Test Report: This file includes data related to the compression tests 
+### c. Specimen Compression Test Report: 
+This file includes data related to the compression tests 
 conducted by a testing agency, such as date of the test, specimen age in days, load at which 
 the specimen broke, and other relevant data points.
 
