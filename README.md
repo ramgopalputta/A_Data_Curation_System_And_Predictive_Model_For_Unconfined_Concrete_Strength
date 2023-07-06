@@ -23,6 +23,7 @@ undergoing compression. As a result, this particular strength is referred to as 
 compression strength. The reason for collecting these wet samples is to test their strength in the 
 lab based on their location of placement, which is crucial for ensuring the structural integrity of 
 the concrete.
+
 ![image](https://github.com/ramgopalputta/Predictive_Model_For_Unconfined_Concrete_Strength/assets/114395443/e29901ff-1dc1-4cf2-b0de-bfc4b86c3e49)
 
 The challenge DCE faces is that it collects an abundance of field concrete samples for 
