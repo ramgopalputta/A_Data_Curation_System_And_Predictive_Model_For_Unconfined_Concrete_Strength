@@ -1,1 +1,6 @@
+The other python file in the folder extracts the semi structured data from PDF files of various formats using various python libraries like Pdfplumber, Pypdfium, Camelot, Tabula etc., cleans the data and saves them into structured tabular formats with defined schemas.
 
+Below are the sample pdf formats:
+
+Smaple pdf_1:
+![image](https://github.com/ramgopalputta/A_Data_Curation_System_And_Predictive_Model_For_Unconfined_Concrete_Strength/assets/114395443/1000854f-3387-40e1-96e4-6a0e68f08a25)
