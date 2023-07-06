@@ -129,4 +129,50 @@ factors that affect the concrete strength in real-world conditions such as varia
 temperature. This helps an engineer to make even better-informed decisions. The subsequent 
 section provides a detailed description of the model and its specifications.
 
+# 2.5 Artificial neural network
+Neural networks are models inspired by the biological structure of the human brain, 
+composed of processing units known as neurons. The strength of neural networks lies in their 
+numerous interconnections and their ability to learn from data, which makes them powerful tools 
+for prediction and classification. In this case, a neural network approach is chosen to address the 
+complex relationships observed in the data between various variables such as Required Strength 
+and Age-days, and their impact on the unconfined compressive strength (UCS).
+In this project, a neural network was used, which consists of layers of neurons that are 
+interconnected through weighted connections and biases. As shown in Fig 3, the first layer takes 
+in the input data, and the last layer produces the output. The intermediate layers, known as hidden 
+layers, perform computations on the data as it passes through the network. Each neuron has a 
+weight that decides how important it is. In a feedforward neural network, the input data is passed 
+through different layers of neurons, which extract features and produce a final output. The weights 
+and biases of these connections are adjusted through the backpropagation algorithm, which 
+involves computing the error between the predicted and actual output and propagating this error 
+backwards through the network to adjust the weights and biases. This technique is particularly 
+useful when the output is dependent on past inputs and when there is a feedback loop between the 
+output and input layers.
+
+![image](https://github.com/ramgopalputta/Predictive_Model_For_Unconfined_Concrete_Strength/assets/114395443/bba1be3f-c945-4c0e-a8da-e35a2beb5d8b)
+
+Given the number of available data points, the optimal performance was observed in the 
+neural network architecture with 4 hidden layers having 300, 200, 100, and 50 neurons
+respectively. In order to prevent over-fitting, a simpler architecture was chosen, with regularization 
+and dropout techniques implemented to further improve the model. Regularization, for instance, 
+involves adding a penalty term to the loss function to limit model complexity, while dropout 
+randomly removes neurons during training to avoid over-reliance on specific neurons. Specifically, 
+the complete dataset was split into an 80% training set and a 20% testing set. Cross-validation was
+then used to evaluate the performance of the model by training it on different combinations of data 
+subsets. The best epoch was chosen based on low validation loss.
+To investigate the factors influencing unconfined concrete strength, permutation 
+importance was used to determine the most significant variables in a neural network model. 
+Permutation importance is a method that measures the importance of each feature in a model by 
+shuffling its values and observing the effect on the model's performance. It works by measuring 
+how much the model's accuracy changes when each variable is randomly shuffled. The greater the 
+change in accuracy, the more important the variable is considered to be in predicting the target 
+variable. By analyzing these scores, the most significant variables in predicting unconfined 
+concrete strength were identified as Specimen Age Days and Specimen Required Strength.
+After training the neural network model with the chosen architecture, and hyperparameters, 
+its performance was evaluated by measuring the RMSE (Root Mean Squared Error) between 
+predicted and actual values of the unconfined concrete strength.
+
+# 3. Result
+## 3.1. Data Visualization and Interpretation
+
+
 
