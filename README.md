@@ -56,7 +56,7 @@ necessary to uncover meaningful insights and patterns.
 
 # 2. METHODOLOGY
 
-# 2.1. About the data
+## 2.1. About the data
 The dataset used in this project comprises of Unconfined Concrete Strength test results for 
 each set of specimens from various construction sites, produced by testing agencies. The data is 
 currently in PDF format and needs to be extracted. Reports produced by two independent testing 
@@ -67,7 +67,7 @@ a structured data such as a clean Excel file that categorizes and minimizes data
 facilitating easy retrieval and analysis for engineers. This structured data enables accurate 
 predictions of Unconfined Concrete Strength.
 
-# 2.2. Designed solution
+## 2.2. Designed solution
 To address these problems, a robust framework is implemented, consisting of two major 
 components – The Data Curation System and The Predictive System.
 The Data Curation System is responsible for collecting, cleaning, and organizing the data 
@@ -78,7 +78,7 @@ utilizesthe curated data to develop predictive models using advanced machine lea
 enabling DCE to accurately predict mix designs for engineering structures in specific temperature 
 ranges and geographic areas.
 
-# 2.3. Data curation system
+## 2.3. Data curation system
 The data curation system was developed in Python to extract and analyze the Unconfined 
 Concrete Strength test data from PDF lab reports. This is accomplished through the utilization of 
 text scraping techniques, using various Python libraries like Pypdfium2, Pdfplumber, Camelot and 
@@ -103,14 +103,14 @@ them. This ensures that the data is stored in a structured and organized format 
 tables, making it easier for DCE engineers and analysts to extract valuable insights and draw 
 conclusions from the data. The data curation system exports data into three clean data files:
 
-a. Project Information: This file is created by DCE analysts and contains information related 
+### a. Project Information: This file is created by DCE analysts and contains information related 
 to a project, such as the project name, building type, number of levels, height, address, site 
 latitude and longitude etc.
-b. Specimen Field Report: This file includes field or site data, such as the site weather, 
+### b. Specimen Field Report: This file includes field or site data, such as the site weather, 
 concrete mix ID, concrete supplier, time of specimen molding, specimen temperature, 
 specimen density, air content, required compression strength of the specimen, and other 
 related data points.
-c. Specimen Compression Test Report: This file includes data related to the compression tests 
+### c. Specimen Compression Test Report: This file includes data related to the compression tests 
 conducted by a testing agency, such as date of the test, specimen age in days, load at which 
 the specimen broke, and other relevant data points.
 
@@ -118,7 +118,7 @@ This structured data is then utilized in the designing of a predictive system, w
 sophisticated machine learning techniques to create models that can accurately predict the 
 Unconfined Concrete Strength of a concrete specimen.
 
-# 2.4. Predictive system
+## 2.4. Predictive system
 Choosing a suitable machine learning algorithm for a given problem depends on several 
 factors, such as the type of data, and the desired outcome. In this case, the obtained data is labeled, 
 and therefore a supervised learning method is appropriate. Additionally, since the target attribute
@@ -129,7 +129,7 @@ factors that affect the concrete strength in real-world conditions such as varia
 temperature. This helps an engineer to make even better-informed decisions. The subsequent 
 section provides a detailed description of the model and its specifications.
 
-# 2.5 Artificial neural network
+## 2.5 Artificial neural network
 Neural networks are models inspired by the biological structure of the human brain, 
 composed of processing units known as neurons. The strength of neural networks lies in their 
 numerous interconnections and their ability to learn from data, which makes them powerful tools 
@@ -173,6 +173,97 @@ predicted and actual values of the unconfined concrete strength.
 
 # 3. Result
 ## 3.1. Data Visualization and Interpretation
+
+![image](https://github.com/ramgopalputta/Predictive_Model_For_Unconfined_Concrete_Strength/assets/114395443/9a3f783f-c8b4-47b5-afcf-5efa735791f1)
+
+The model results in the RMSE value of 991, which means the predicted concrete strength 
+value is off by +/-991 PSI.
+The key influential variables are identified by the model. As illustrated in Figure 4, the top 
+three influential features for predicting the measured concrete strength were found to be the batch 
+required strength, the specimen age tested, and the batch temperature. This finding offers valuable 
+insights into the key factors that impact concrete strength and can aid in enhancing quality control 
+and optimizing the concrete production process.
+In our study, we observed that the majority of specimens were tested on the 7th, 28th, and 
+56th days. To investigate the relationship between the required strength and the measured strength 
+on these days, we plotted the data and visualized the results as shown in Figure 5. The linear 
+regression lines indicate the trend, while the blue ticks represent the mean ratio with each required 
+strength, and the bars show one standard deviation from the means.
+
+![image](https://github.com/ramgopalputta/Predictive_Model_For_Unconfined_Concrete_Strength/assets/114395443/052b3cd2-6883-45ef-9d1f-11af6ecf487e)
+
+As depicted in Figure 5, on the seventh day, most specimens exhibited measured strengths 
+that were close to but slightly lower than the required strength, except for a few with a very low 
+required strength. By the twenty-eighth day, the majority of specimens had exceeded their required 
+strength. Moreover, the concrete specimens continued to cure and exceed the required strength 
+after the first twenty-eight days. Notably, we observed that for specimens with the largest required 
+strength (12,000 PSI), the diagonal line passed through the mean of the measured strength on the 
+28th-day plot. Furthermore, any specimen with a lower measured strength than the mean was not 
+qualified. This indicates that even though the majority of the concrete specimens exceeded the 
+required strength in the first twenty-eight days, specimens with higher required strength need to 
+be allowed to continue curing beyond the twenty-eighth day to ensure their quality.
+
+![image](https://github.com/ramgopalputta/Predictive_Model_For_Unconfined_Concrete_Strength/assets/114395443/544e85c8-2474-4b50-b8db-663875623b56)
+
+In order to gain deeper insights into the performance of specimens with varying required 
+strengths over time, we categorized the required strength into four bins. Subsequently, we plotted 
+the ratio of Measured Strength to Required Strength against the Specimen Age for each bin. 
+Considering that concrete samples tend to exhibit faster initial curing and slower later-stage curing, 
+we employed logarithmic regression. To depict the trend, logarithmic regression lines were 
+incorporated into the plot. As shown in Figure 6, specimens with required strength less than 10,000 
+PSI exhibit similar behavior, with those in the 5001 to 7,000 PSI range curing the fastest. On the 
+other hand, specimens with required strength higher than 10,000 PSI cure much slower and their 
+measured-to-required strength ratios do not rise as high as the others. In the lower right plot, we 
+observe that the majority of specimens in this required strength range do not reach the required 
+strength until the fifth or sixth day (one standard deviation away from the mean). Therefore, concrete samples with a required strength higher than 10,000 PSI should be cured for at least 56 
+days, or potentially longer, to ensure their quality before their application in construction.
+
+![image](https://github.com/ramgopalputta/Predictive_Model_For_Unconfined_Concrete_Strength/assets/114395443/433aa6e0-510f-4f3f-ba43-c26580c1de68)
+
+Lastly, our analysis focused on the third most influential feature for predicting concrete 
+strength, namely batch temperature. This feature denotes the temperature of the concrete specimen 
+during the curing process. Figure 7 illustrates our findings, indicating that a higher batch 
+temperature during the initial 14-day period is correlated with improved curing, as evidenced by 
+the measured strength surpassing the required threshold.
+However, beyond the first 14 days, this correlation ceases to hold true, with one exception: 
+specimens with a required strength falling within the range of 5,001 to 7,000 PSI. Consequently, 
+we recommend reducing the batch temperature for all specimens whose required strength falls 
+outside of this range after the initial 14-day period, as this adjustment has the potential to enhance 
+the measured strength. Currently, batch temperature manipulation involves the addition of hot 
+water or ice, both of which may have a detrimental effect on the measured strength. Unfortunately, 
+due to missing data regarding the amount of water added, our project was unable to explore the 
+relationship between water added, batch temperature, and measured strength. To facilitate further 
+investigation, we strongly recommend collecting information on water added, enabling a more 
+comprehensive analysis of these interrelated factors in the future. Such an exploration will yield a 
+more precise recommendation regarding batch temperature manipulation.
+
+
+# 4. Conclusion
+This project has helped DCE overcome their data storage, retrieval, and analysis
+challenges. Initially, DCE stored their concrete strength test reports stored in PDF files on a shared 
+drive, which made it difficult for their engineers to retrieve the data and impossible to conduct data 
+analysis. To address these issues, our team developed text scraper tools to extract the data from 
+the PDF files and established a data schema to store the data in a structured format, for improved
+data storage and retrieval.
+In addition, we have developed a predictive model for concrete strength using Artificial 
+Neural Networksthat can potentially save DCE's engineers time, money, and efforts by estimating
+concrete strength values without the need of conducting several strength measurement tests in the 
+laboratories by various testing agencies. The model can be used to predict concrete strength for 
+different batches with varying parameters, empowering engineers to adjust the curing process and 
+enhance the overall quality of the concrete.
+Finally, the plots we created provide key insights and advice on concrete curing. We 
+analyzed the relationship between variables such as batch temperature, required strength, and 
+specimen age and their impact on measured strength. Our findings suggest that reducing the batch 
+temperature after the first 14 days for specimens with required strength above 5,000 PSI can 
+potentially increase measured strength. This information can help DCE's engineers to adjust the 
+curing process to improve the overall quality of their concrete.
+Overall, the improved data management processes and machine learning models we 
+developed have the potential to revolutionize the construction industry by providing engineers with 
+accurate predictions and insights on concrete strength and curing processes.
+
+
+
+
+
 
 
 
