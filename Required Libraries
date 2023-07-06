@@ -1,0 +1,38 @@
+# INSTALL LIBRARIES
+
+!pip install -Uqq pypdfium2
+!pip install -Uqq tabula-py
+!pip install -Uqq pdfplumber
+!pip install -Uqq python-dateutil
+!pip install -Uqq xlrd
+!pip install -Uqq regex
+!pip install -Uqq camelot-py[cv]
+!pip install -Uqq fastai
+
+# LOAD THE BELOW LIBRARIES:
+
+import warnings
+warnings.filterwarnings('ignore')
+import pypdfium2 as pdfium
+import pandas as pd
+import numpy as np
+import os
+import os.path
+import tabula
+from tabula.io import read_pdf
+import pdfplumber
+import re
+from datetime import datetime
+from datetime import date
+from dateutil.relativedelta import relativedelta
+import uuid
+import camelot as cam
+from numpy.core.fromnumeric import transpose
+from pathlib import Path
+import tkinter
+import warnings
+warnings.filterwarnings('ignore')
+import pandas as pd
+import numpy as np
+from fastai.tabular.all import *
+import pathlib
