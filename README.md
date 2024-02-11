@@ -43,7 +43,7 @@ specific building types and to understand the performance of high-strength mixes
 cycles. This information could help identify the most successful mixes and highlight any issues 
 with mixes that have strength problems.
 
-Currently, DCE's approach for collecting and analyzing this data includes obtaining readymix concrete loads from the contractor, collecting cylindrical modeled specimens, and sending 
+Currently, DCE's approach for collecting and analyzing this data includes obtaining ready mix concrete loads from the contractor, collecting cylindrical modeled specimens, and sending 
 them to the labs for testing the unconfined concrete strength for 56 days. The results of these tests 
 are then sent to the DCE's shared drive, where the engineers review them manually, and make 
 decisions accordingly. Despite collecting a vast dataset of field concrete samples for unconfined 
